@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Santa's New Year Celebration</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #650000, #123c28, #071c16);
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* SNOW */
+
+.snow {
+    position: fixed;
+    top: -30px;
+    color: white;
+    pointer-events: none;
+    z-index: 0;
+    animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 650px;
+    padding: 30px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.45);
+    border: 2px solid #ffd700;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.25);
+}
+
+/* CHRISTMAS DECORATIONS */
+
+.decorations {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* BIG SANTA */
+
+.santa {
+    font-size: clamp(110px, 30vw, 175px);
+    line-height: 1.3;
+    margin: 5px 0 15px;
+    animation: santaWave 2s ease-in-out infinite alternate;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.5));
+}
+
+@keyframes santaWave {
+    from {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    to {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+.santa-message {
+    color: #ffd700;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* HEADINGS */
+
+h1 {
+    color: #ffd700;
+    font-size: clamp(25px, 6vw, 38px);
+    margin-bottom: 15px;
+    text-shadow: 0 2px 8px black;
+}
+
+.intro {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.time-box {
+    background: #fff;
+    color: #8b0000;
+    padding: 17px 5px;
+    border-radius: 12px;
+    border-bottom: 4px solid #ffd700;
+}
+
+.time-box span {
+    display: block;
+    font-size: clamp(22px, 6vw, 34px);
+    font-weight: bold;
+}
+
+.time-box p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* GREETING */
+
+.greeting {
+    color: #ffd700;
+    font-size: clamp(21px, 5vw, 29px);
+    margin: 25px 0 15px;
+    line-height: 1.4;
+}
+
+.wish {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* FORM */
+
+.form-section {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 25px;
+    margin-top: 25px;
+}
+
+h2 {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.form-section p {
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+button {
+    background: #ffd700;
+    color: #650000;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    width: 100%;
+}
+
+button:hover {
+    background: white;
+}
+
+.link-section {
+    margin-top: 20px;
+    overflow-wrap: anywhere;
+}
+
+.link-section a {
+    display: block;
+    color: #ffd700;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.footer {
+    color: #eee;
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* PHONE DESIGN */
+
+@media (max-width: 380px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 22px 12px;
+    }
+
+    .countdown {
+        gap: 5px;
+    }
+
+    .time-box {
+        padding: 13px 3px;
+    }
+
+    .time-box p {
+        font-size: 10px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="decorations">
+        🎄 🎁 ⭐ 🎄
+    </div>
+
+    <!-- BIG PERE NOEL -->
+
+    <div class="santa">
+        🎅
+    </div>
+
+    <p class="santa-message">
+        Ho Ho Ho! Santa Claus is here! 🎁
+    </p>
+
+    <h1>HAPPY NEW YEAR 2027!</h1>
+
+    <p class="intro">
+        Welcome to a magical celebration!
+        A new year, a new beginning and endless blessings. ❤️
+    </p>
+
+    <!-- COUNTDOWN -->
+
+    <div class="countdown">
+
+        <div class="time-box">
+            <span id="days">00</span>
+            <p>Days</p>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">00</span>
+            <p>Hours</p>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <p>Minutes</p>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <p>Seconds</p>
+        </div>
+
+    </div>
+
+    <!-- PERSONALIZED GREETING -->
+
+    <div id="greetingArea" hidden>
+
+        <h2 class="greeting" id="greeting"></h2>
+
+        <p class="wish">
+            May God fill your new year with happiness,
+            peace, good health, success and endless blessings. ❤️
+
+            May He protect you, guide your steps,
+            and make this year beautiful for you. 🙏
+
+            Never stop believing in beautiful beginnings!
+        </p>
+
+        <div style="font-size:35px;">
+            🎁 🎄 ❤️ 🎄 🎁
+        </div>
+
+    </div>
+
+    <!-- SHARE FORM -->
+
+    <div class="form-section">
+
+        <h2>Spread the Christmas Happiness! ❤️</h2>
+
+        <p>
+            Enter someone's name and create a special
+            New Year greeting for them.
+        </p>
+
+        <input
+            type="text"
+            id="receiverName"
+            placeholder="Enter receiver's name"
+            maxlength="50"
+        >
+
+        <button onclick="generateLink()">
+            🎉 Generate Personalized Link
+        </button>
+
+        <div class="link-section" id="linkSection" hidden>
+
+            <p>Your personalized link is ready! ❤️</p>
+
+            <a id="generatedLink" href="#"></a>
+
+            <button onclick="copyLink()">
+                Copy Link
+            </button>
+
+            <button onclick="shareLink()">
+                📲 Share with Friends
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Made with ❤️ to spread love and happiness.
+        <br><br>
+        🎅 Merry Christmas and Happy New Year! 🎄
+    </div>
+
+</div>
+
+
+<script>
+
+/* 1. CREATE FALLING SNOW */
+
+const snowSymbols = ["❄", "❅", "❆"];
+
+for (let i = 0; i < 35; i++) {
+
+    const snow = document.createElement("div");
+
+    snow.className = "snow";
+
+    snow.textContent =
+        snowSymbols[Math.floor(Math.random() * snowSymbols.length)];
+
+    snow.style.left = Math.random() * 100 + "vw";
+
+    snow.style.fontSize =
+        (10 + Math.random() * 18) + "px";
+
+    snow.style.opacity = 0.4 + Math.random() * 0.6;
+
+    snow.style.animationDuration =
+        (5 + Math.random() * 8) + "s";
+
+    snow.style.animationDelay =
+        (-Math.random() * 10) + "s";
+
+    document.body.appendChild(snow);
+
+}
+
+
+/* 2. LIVE NEW YEAR COUNTDOWN */
+
+function updateCountdown() {
+
+    const now = new Date();
+
+    // Next January 1
+    const newYear = new Date(
+        now.getFullYear() + 1, 0, 1, 0, 0, 0
+    );
+
+    const difference = newYear - now;
+
+    const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (difference / 1000) % 60
+    );
+
+    document.getElementById("days").textContent = days;
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+
+/* 3. SHOW PERSONALIZED GREETING */
+
+const params = new URLSearchParams(
+    window.location.search
+);
+
+const receiver = params.get("receiver");
+
+if (receiver && receiver.trim() !== "") {
+
+    document.getElementById("greetingArea").hidden = false;
+
+    document.getElementById("greeting").textContent =
+        "HAPPY NEW YEAR TO YOU, " +
+        receiver.toUpperCase() + "! ❤️";
+
+}
+
+
+/* 4. GENERATE PERSONALIZED LINK */
+
+function generateLink() {
+
+    const name = document
+        .getElementById("receiverName")
+        .value.trim();
+
+    if (name === "") {
+
+        alert("Please enter the receiver's name!");
+
+        return;
+
+    }
+
+    const newURL = new URL(window.location.href);
+
+    newURL.search = "";
+
+    newURL.hash = "";
+
+    newURL.searchParams.set("receiver", name);
+
+    const link = newURL.href;
+
+    document.getElementById("generatedLink").href = link;
+
+    document.getElementById("generatedLink").textContent = link;
+
+    document.getElementById("linkSection").hidden = false;
+
+}
+
+
+/* 5. COPY LINK */
+
+async function copyLink() {
+
+    const link =
+        document.getElementById("generatedLink").href;
+
+    try {
+
+        await navigator.clipboard.writeText(link);
+
+        alert("Your link has been copied! ❤️");
+
+    } catch (error) {
+
+        alert("Please copy the displayed link manually.");
+
+    }
+
+}
+
+
+/* 6. SHARE LINK */
+
+async function shareLink() {
+
+    const link =
+        document.getElementById("generatedLink").href;
+
+    if (navigator.share) {
+
+        try {
+
+            await navigator.share({
+
+                title: "Happy New Year 2027!",
+
+                text: "Santa has a special greeting for you! 🎅❤️",
+
+                url: link
+
+            });
+
+        } catch (error) {
+
+            // The user cancelled sharing.
+
+        }
+
+    } else {
+
+        copyLink();
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
