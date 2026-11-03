@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Merry Christmas & Happy New Year 2027</title>
+
+<style>
+
+/* GENERAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 20% 20%, #315d85, transparent 35%),
+        linear-gradient(135deg, #06172d, #123d5c, #071b30);
+
+    color: white;
+    min-height: 100vh;
+    padding: 15px;
+    overflow-x: hidden;
+}
+
+/* FALLING SNOW */
+
+.snow {
+    position: fixed;
+    top: -30px;
+    color: white;
+    pointer-events: none;
+    z-index: 5;
+    animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* CHRISTMAS TREES */
+
+.tree {
+    position: fixed;
+    bottom: 5px;
+    font-size: clamp(55px, 10vw, 110px);
+    z-index: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 0 10px gold);
+}
+
+.tree-left {
+    left: 2px;
+}
+
+.tree-right {
+    right: 2px;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 750px;
+    margin: 15px auto;
+    padding: 25px 18px;
+    text-align: center;
+
+    background: rgba(3, 25, 40, 0.88);
+
+    border: 3px solid #ffd700;
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 25px rgba(255, 215, 0, 0.4),
+        0 0 50px rgba(255, 255, 255, 0.15);
+}
+
+/* DECORATIONS */
+
+.decorations {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* SANTA CLAUS */
+
+.santa-image {
+    width: 100%;
+    max-width: 300px;
+    height: 430px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
+
+    border-radius: 18px;
+
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.5));
+
+    animation: santaFloat 3s ease-in-out infinite alternate;
+}
+
+@keyframes santaFloat {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.santa-message {
+    color: #ffd700;
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+/* HEADINGS */
+
+h1 {
+    color: #ffd700;
+    font-size: clamp(25px, 6vw, 40px);
+    margin-bottom: 15px;
+    text-shadow: 0 2px 8px black;
+}
+
+.intro {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 9px;
+    margin: 25px 0;
+}
+
+.time-box {
+    background: linear-gradient(#fff, #e8e8e8);
+    color: #a00000;
+    padding: 16px 4px;
+    border-radius: 12px;
+    border-bottom: 5px solid #ffd700;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.time-box span {
+    display: block;
+    font-size: clamp(22px, 6vw, 34px);
+    font-weight: bold;
+}
+
+.time-box p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* PERSONALIZED GREETING */
+
+.greeting-area {
+    background: rgba(115, 0, 0, 0.75);
+    border: 2px solid gold;
+    border-radius: 18px;
+    padding: 20px 12px;
+    margin-top: 25px;
+}
+
+.greeting {
+    color: #ffd700;
+    font-size: clamp(21px, 5vw, 30px);
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.wish {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* FORM */
+
+.form-section {
+    background: rgba(100, 0, 0, 0.65);
+    border: 2px solid #ffd700;
+    border-radius: 18px;
+    padding: 25px 15px;
+    margin-top: 30px;
+}
+
+h2 {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.form-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #ffd700;
+}
+
+/* BUTTONS */
+
+button {
+    width: 100%;
+    background: linear-gradient(#ffdf45, #e9a900);
+    color: #650000;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    transform: scale(1.02);
+}
+
+.copy-button {
+    background: #087b3c;
+    color: white;
+}
+
+.share-button {
+    background: #1769d2;
+    color: white;
+}
+
+/* GENERATED LINK */
+
+.link-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+}
+
+.link-section a {
+    display: block;
+    color: #ffe66d;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+.footer {
+    color: #eee;
+    margin-top: 25px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* MOBILE DESIGN */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        padding: 22px 12px;
+        margin: 8px auto;
+    }
+
+    .santa-image {
+        height: 350px;
+    }
+
+    .countdown {
+        gap: 5px;
+    }
+
+    .time-box {
+        padding: 13px 3px;
+    }
+
+    .time-box p {
+        font-size: 10px;
+    }
+
+    .tree {
+        opacity: 0.35;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- CHRISTMAS TREES -->
+
+<div class="tree tree-left">🎄</div>
+<div class="tree tree-right">🎄</div>
+
+<div class="container">
+
+    <div class="decorations">
+        🎄 🎁 ⭐ ❄️ 🎄
+    </div>
+
+    <!-- SANTA CLAUS IMAGE -->
+
+    <img
+        src="santa-christmas-cropped.png"
+        alt="Santa Claus bringing Christmas presents"
+        class="santa-image"
+        onerror="this.style.display='none'; document.getElementById('santaFallback').hidden=false;"
+    >
+
+    <div id="santaFallback" style="font-size:150px;" hidden>
+        🎅
+    </div>
+
+    <p class="santa-message">
+        Ho Ho Ho! Santa Claus is here! 🎅🎁
+    </p>
+
+    <!-- AUTOMATIC NEW YEAR HEADING -->
+
+    <h1 id="mainGreeting">
+        HAPPY NEW YEAR IN ADVANCE!
+    </h1>
+
+    <p class="intro" id="introMessage">
+        Get ready to welcome 2027!
+        A new year, a new beginning and endless blessings. ❤️
+    </p>
+
+    <div class="decorations">
+        🎄 ✨ 🎁 ✨ 🎄
+    </div>
+
+    <!-- COUNTDOWN -->
+
+    <div class="countdown">
+
+        <div class="time-box">
+            <span id="days">00</span>
+            <p>Days</p>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">00</span>
+            <p>Hours</p>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <p>Minutes</p>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <p>Seconds</p>
+        </div>
+
+    </div>
+
+    <!-- PERSONALIZED GREETING -->
+
+    <div id="greetingArea" class="greeting-area" hidden>
+
+        <h2 class="greeting" id="greeting"></h2>
+
+        <p class="wish" id="wishMessage">
+            May God fill your new year with happiness,
+            peace, good health, success and endless blessings. ❤️
+
+            <br><br>
+
+            May He protect you, guide your steps,
+            and make this year beautiful for you. 🙏
+
+            <br><br>
+
+            Never stop believing in beautiful beginnings!
+        </p>
+
+        <div style="font-size:35px; margin-top:15px;">
+            🎁 🎄 ❤️ 🎄 🎁
+        </div>
+
+    </div>
+
+    <!-- SHARE FORM -->
+
+    <div class="form-section">
+
+        <h2>🎁 Spread the Christmas Happiness! ❤️</h2>
+
+        <p>
+            Enter someone's name and create a special
+            New Year greeting for them.
+        </p>
+
+        <input
+            type="text"
+            id="receiverName"
+            placeholder="Enter receiver's name"
+            maxlength="50"
+        >
+
+        <button onclick="generateLink()">
+            🎉 Generate Personalized Link
+        </button>
+
+        <div class="link-section" id="linkSection" hidden>
+
+            <p>Your personalized link is ready! ❤️</p>
+
+            <a id="generatedLink" href="#"></a>
+
+            <button class="copy-button" onclick="copyLink()">
+                📋 Copy Link
+            </button>
+
+            <button class="share-button" onclick="shareLink()">
+                📲 Share with Friends
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        Made with ❤️ to spread love and happiness.
+
+        <br><br>
+
+        🎅 Merry Christmas and Happy New Year! 🎄
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* 1. CREATE FALLING SNOW */
+
+const snowSymbols = ["❄", "❅", "❆"];
+
+for (let i = 0; i < 55; i++) {
+
+    const snow = document.createElement("div");
+
+    snow.className = "snow";
+
+    snow.textContent =
+        snowSymbols[Math.floor(Math.random() * snowSymbols.length)];
+
+    snow.style.left = Math.random() * 100 + "vw";
+
+    snow.style.fontSize =
+        (10 + Math.random() * 18) + "px";
+
+    snow.style.opacity =
+        0.4 + Math.random() * 0.6;
+
+    snow.style.animationDuration =
+        (5 + Math.random() * 8) + "s";
+
+    snow.style.animationDelay =
+        (-Math.random() * 10) + "s";
+
+    document.body.appendChild(snow);
+
+}
+
+
+/* 2. AUTOMATIC NEW YEAR GREETING */
+
+function updateNewYearGreeting() {
+
+    const today = new Date();
+
+    const isNewYear =
+        today.getFullYear() >= 2027;
+
+    const mainGreeting =
+        document.getElementById("mainGreeting");
+
+    const introMessage =
+        document.getElementById("introMessage");
+
+    const params = new URLSearchParams(
+        window.location.search
+    );
+
+    const receiver = params.get("receiver");
+
+    if (isNewYear) {
+
+        mainGreeting.textContent =
+            "HAPPY NEW YEAR! 🎉❤️";
+
+        introMessage.textContent =
+            "The new year is finally here! May 2027 bring happiness, peace and endless blessings. ❤️";
+
+    } else {
+
+        mainGreeting.textContent =
+            "HAPPY NEW YEAR IN ADVANCE! 🎉";
+
+        introMessage.textContent =
+            "Get ready to welcome 2027! A new year, a new beginning and endless blessings. ❤️";
+
+    }
+
+    /* PERSONALIZED GREETING */
+
+    if (receiver && receiver.trim() !== "") {
+
+        document.getElementById("greetingArea").hidden = false;
+
+        document.getElementById("greeting").textContent =
+            isNewYear
+            ? "HAPPY NEW YEAR TO YOU, " +
+              receiver.trim().toUpperCase() + "! ❤️"
+
+            : "HAPPY NEW YEAR IN ADVANCE TO YOU, " +
+              receiver.trim().toUpperCase() + "! ❤️";
+
+    }
+
+}
+
+updateNewYearGreeting();
+
+
+/* 3. LIVE COUNTDOWN TO 2027 */
+
+function updateCountdown() {
+
+    const now = new Date();
+
+    const newYear = new Date(2027, 0, 1, 0, 0, 0);
+
+    let difference = newYear - now;
+
+    if (difference < 0) {
+        difference = 0;
+    }
+
+    const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (difference / 1000) % 60
+    );
+
+    document.getElementById("days").textContent = days;
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+
+/* 4. GENERATE PERSONALIZED LINK */
+
+function generateLink() {
+
+    const name = document
+        .getElementById("receiverName")
+        .value.trim();
+
+    if (name === "") {
+
+        alert("Please enter the receiver's name!");
+
+        return;
+
+    }
+
+    const newURL = new URL(window.location.href);
+
+    newURL.search = "";
+
+    newURL.hash = "";
+
+    newURL.searchParams.set("receiver", name);
+
+    const link = newURL.href;
+
+    document.getElementById("generatedLink").href = link;
+
+    document.getElementById("generatedLink").textContent = link;
+
+    document.getElementById("linkSection").hidden = false;
+
+}
+
+
+/* 5. COPY LINK */
+
+async function copyLink() {
+
+    const link =
+        document.getElementById("generatedLink").href;
+
+    try {
+
+        await navigator.clipboard.writeText(link);
+
+        alert("Your link has been copied! ❤️");
+
+    } catch (error) {
+
+        alert("Please copy the displayed link manually.");
+
+    }
+
+}
+
+
+/* 6. SHARE LINK */
+
+async function shareLink() {
+
+    const link =
+        document.getElementById("generatedLink").href;
+
+    if (navigator.share) {
+
+        try {
+
+            await navigator.share({
+
+                title: "Happy New Year 2027!",
+
+                text: "Santa has a special greeting for you! 🎅❤️",
+
+                url: link
+
+            });
+
+        } catch (error) {
+
+            // Sharing was cancelled.
+
+        }
+
+    } else {
+
+        copyLink();
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
